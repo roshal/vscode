@@ -89,7 +89,9 @@ class Settings {
 			this.canvasHeight = (this.domHeight * this.pixelRatio) | 0;
 		}
 
-		const [x, w] = this._initLanes(1, this.canvasWidth, this.overviewRulerLanes);
+		const canvasLeftOffset = this.renderBorder ? 1 : 0;
+
+		const [x, w] = this._initLanes(canvasLeftOffset, this.canvasWidth, this.overviewRulerLanes);
 		this.x = x;
 		this.w = w;
 	}
